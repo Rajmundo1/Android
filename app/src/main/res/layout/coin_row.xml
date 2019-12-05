@@ -66,17 +66,19 @@
 
     <TextView
         android:id="@+id/tv_MCap"
+        style="@style/coinRowText"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:gravity="right"
         android:text="@string/mcap"
-        style="@style/coinRowText"
         app:layout_constraintEnd_toStartOf="@+id/coin_iv_favorite"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_24h"
+        android:gravity="right"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
