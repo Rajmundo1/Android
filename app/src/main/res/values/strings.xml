@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CryptoX</string>
+    <string name="title_activity_main">CryptoX</string>
+    <string name="last_updated_on">Last Updated On:</string>
+    <string name="_9999_99">9999.99$</string>
+    <string name="namename">NameNAME</string>
+    <string name="_9999">9999</string>
+    <string name="refresh">Refresh</string>
+</resources>
