@@ -64,4 +64,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_star_empty" />
 
+    <TextView
+        android:id="@+id/tv_MCap"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/mcap"
+        style="@style/coinRowText"
+        app:layout_constraintEnd_toStartOf="@+id/coin_iv_favorite"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_24h"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/_24h"
+        style="@style/coinRowText"
+        app:layout_constraintEnd_toEndOf="@+id/tv_MCap"
+        app:layout_constraintTop_toBottomOf="@+id/tv_MCap" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

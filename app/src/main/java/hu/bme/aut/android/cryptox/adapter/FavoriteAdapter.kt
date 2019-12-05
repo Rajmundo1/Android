@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso
 import hu.bme.aut.android.cryptox.MainActivity
 import hu.bme.aut.android.cryptox.R
 import hu.bme.aut.android.cryptox.model.Coin
+import kotlinx.android.synthetic.main.coin_row.view.*
 import kotlinx.android.synthetic.main.fav_row.view.*
 import okhttp3.OkHttpClient
 import java.lang.StringBuilder
@@ -105,8 +106,6 @@ class FavoriteAdapter(internal var mContext: MainActivity) : RecyclerView.Adapte
                 mContext.coinChanged(oldCoin,newCoin)
 
             }
-
-
         }
 
 

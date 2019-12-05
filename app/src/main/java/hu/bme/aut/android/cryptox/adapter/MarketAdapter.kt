@@ -2,6 +2,7 @@ package hu.bme.aut.android.cryptox.adapter
 
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,11 +35,12 @@ class MarketAdapter(internal var mContext: MainActivity) : RecyclerView.Adapter<
 
         holder.tvNumber.text = (position+1).toString()
         holder.tvName.text = coin.name
-        holder.tvPrice.text = coin.price_usd.toString() + "$"
+        holder.tvPrice.text = coin.price_usd.toString().take(8) + "$"
 
         holder.item = coin
 
-
+        holder.mcap.text = shortNumber(coin.market_cap_usd)
+        holder.daily.text = shortNumber(coin.percent_change_24h).toString() + " %"
 
         if(coin.favorite == 1) holder.favStar.setImageResource(holder.whiteFullStar)
         if(coin.favorite == 0) holder.favStar.setImageResource(holder.whiteEmptyStar)
@@ -76,6 +78,9 @@ class MarketAdapter(internal var mContext: MainActivity) : RecyclerView.Adapter<
 
         lateinit var item: Coin
 
+        var mcap: TextView
+        var daily: TextView
+
         init {
             tvNumber = itemView.coin_row_date
             tvName = itemView.coin_row_name
@@ -101,6 +106,9 @@ class MarketAdapter(internal var mContext: MainActivity) : RecyclerView.Adapter<
 
                 mContext.coinChanged(oldCoin,newCoin)
             }
+
+            mcap = itemView.tv_MCap
+            daily = itemView.tv_24h
         }
     }
 
@@ -122,5 +130,18 @@ class MarketAdapter(internal var mContext: MainActivity) : RecyclerView.Adapter<
         notifyItemRangeRemoved(0, size)
     }
 
+    fun shortNumber(num: Double): String{
+        var ret = num
+        if(ret > 1000000000){
+            ret /= 1000000000
+            return ret.toString().take(8) + " B"
+        }
+        if(ret > 1000000){
+            ret /= 1000000
+            return ret.toString().take(8) + " M"
+        }
+        else
+            return ret.toString().take(8)
 
+    }
 }

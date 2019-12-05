@@ -6,4 +6,6 @@
     <string name="namename">NameNAME</string>
     <string name="_9999">9999</string>
     <string name="refresh">Refresh</string>
+    <string name="mcap">Mcap</string>
+    <string name="_24h">24h</string>
 </resources>
